@@ -1,4 +1,4 @@
-local opt = vim.opt -- for conciseness
+local opt = vim.opt
 
 --Line Numbers
 opt.number = true
