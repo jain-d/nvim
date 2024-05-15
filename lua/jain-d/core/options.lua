@@ -5,7 +5,7 @@ opt.number = true
 opt.relativenumber = true
 
 --Tabs and Indentation
-opt.tabstop = 2
+opt.tabstop = 3
 opt.shiftwidth = 2
 opt.expandtab = true
 opt.autoindent = true
@@ -24,3 +24,6 @@ opt.cursorline = true
 opt.termguicolors = true
 opt.background = "dark"
 opt.signcolumn = "yes"
+
+--Bidirectional copying
+vim.api.nvim_set_option("clipboard", "unnamedplus");
