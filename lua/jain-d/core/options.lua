@@ -8,10 +8,12 @@ opt.relativenumber = true
 opt.tabstop = 3
 opt.shiftwidth = 2
 opt.expandtab = true
-opt.autoindent = true
+vim.opt.autoindent = true
+vim.opt.smartindent = true
 
 --Line Wrapping
-opt.wrap = false
+opt.wrap = true
+opt.linebreak = true
 
 --Search Settings
 opt.ignorecase = true
