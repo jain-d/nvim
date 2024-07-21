@@ -31,3 +31,6 @@ keymap.set("v", "<A-k>", ":m .-1<CR>==", opt)
 
 -- Return to File Explorer Rex
 keymap.set("n", "<leader>x", ":Rex<CR>", opt)
+
+-- Launch Terminal inside Nvim
+keymap.set("n", "<leader>`", ":terminal<CR>a", opt)
