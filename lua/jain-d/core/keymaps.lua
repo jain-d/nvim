@@ -33,4 +33,4 @@ keymap.set("v", "<A-k>", ":m .-1<CR>==", opt)
 keymap.set("n", "<leader>x", ":Rex<CR>", opt)
 
 -- Launch Terminal inside Nvim
-keymap.set("n", "<leader>`", ":terminal<CR>a", opt)
+keymap.set("n", "<leader>`", ":stop<CR>", opt)
