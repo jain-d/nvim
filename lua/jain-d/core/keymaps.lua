@@ -32,5 +32,5 @@ keymap.set("v", "<A-k>", ":m .-1<CR>==", opt)
 -- Return to File Explorer Rex
 keymap.set("n", "<leader>x", ":Rex<CR>", opt)
 
--- Launch Terminal inside Nvim
+-- BETTER TERMINAL; Suspends NeoVim and back to Terminal
 keymap.set("n", "<leader>`", ":stop<CR>", opt)
