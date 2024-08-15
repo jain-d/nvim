@@ -3,10 +3,10 @@ local opt = vim.opt
 --Line Numbers
 opt.number = true
 opt.relativenumber = true
-
+   
 --Tabs and Indentation
 opt.tabstop = 3
-opt.shiftwidth = 2
+opt.shiftwidth = 3
 opt.expandtab = true
 vim.opt.autoindent = true
 vim.opt.smartindent = true
