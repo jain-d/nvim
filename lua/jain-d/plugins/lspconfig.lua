@@ -1,38 +1,35 @@
---[[
-
 return {
    "neovim/nvim-lspconfig",
    event = { "BufReadPre", "BufNewFile" },
    dependencies = {
-      "hrsh7th/cmp-nvim-lsp",
-      {"antosha417/nvim-lsp-file-operations", config = true },
+      "hrsh7th/cmp-nvim-lsp"
    },
    config = function()
       local lspconfig = require("lspconfig")
 
       local cmp_nvim_lsp = require("cmp_nvim_lsp")
-      
+
       local keymap = vim.keymap
 
-      local opt = { noremap = true, silent = true }
-      
+      local opts = { noremap = true, silent = true }
       local on_attach = function(client, bufnr)
          opts.buffer = bufnr
 
          opts.desc = "Show References"
-         keymap.set("n", "gR", "<cmd>Telescope lsp_references<CR>", opts)
-
-         opts.desc = "Go to Declaration"
-         keymap.set("n", "gD", vim.lsp.buf.Declaration, opts)
+         keymap.set("n", "gR", ":Telescope lsp_references<CR>", opts)
 
          opts.desc = "Go to Defination"
-         keymap.set("n", "gD", "<cmd>Telescope lsp_definitions<CR>", opts)
+         keymap.set("n", "gd", ":Telescope lsp_definations<CR>", opts)
+
+         opts.desc = "Go to Declaration"
+         keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
 
          opts.desc = "Documentation of what's under the cursor"
          keymap.set("n", "K", vim.lsp.buf.hover, opts)
+
       end
 
-      local capabilities = cmp_nvim_lsp.default_capabilites()
+      local capabilities = cmp_nvim_lsp.default_capabilities()
 
       local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
       for type, icon in pairs(signs) do
@@ -40,57 +37,43 @@ return {
          vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
       end
 
-      mason_lspconfig.setup_handlers({
-         -- default handler for installed servers
-         function(server_name)
-           lspconfig[server_name].setup({
-             capabilities = capabilities,
-           })
-         end,
+      lspconfig["html"].setup({
+         capabilities = capabilities,
+         on_attach = on_attach,
+      })
 
-         -- html language server
-         ["html"] = function()
-            lspconfig["html"].setup({
-               capabilities = capabilities,
-               on_attach = on_attach,
-            })
-         end
+      lspconfig["cssls"].setup({
+         capabilities = capabilities,
+         on_attach = on_attach,
+      })
 
-         -- css language server
-         ["cssls"] = function()
-            lspconfig["cssls"].setup({
-               capabilities = capabilities,
-               on_attach = on_attach,
-            })
-         end
+      lspconfig["eslint"].setup({
+         capabilities = capabilities,
+         on_attach = on_attach,
+      })
 
-         -- JS TS language server
-         ["eslint"] = function()
-           lspconfig["eslint"].setup({
-               capabilities = capabilities,
-               on_attach = on_attach,
-            })
-         end
+      lspconfig["pyright"].setup({
+         capabilities = capabilities,
+         on_attach = on_attach,
+      })
 
-         -- Python language server
-         ["pyright"] = function()
-            lspconfig["pyright"].setup({
-               capabilities = capabilities,
-               on_attach = on_attach,
-            })
-         end
-
-        --[[ 
-        --    Language server
-         [""] = function()
-           lspconfig[""].setup({
-               capabilities = capabilities,
-               on_attach = on_attach,
-            })
-         end
-         ]]--
---      })
-
---   end
---}
-
+      lspconfig["lua_ls"].setup({
+         capabilities = capabilities,
+         on_attach = on_attach,
+         settings = {
+            Lua = {
+               diagnostics = {
+                  globals = { "vim" },
+               },
+               workspace = {
+                  library = {
+                     [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+                     [vim.fn.stdpath("config") .. "/lua"] = true,
+                  },
+               },
+            }
+         }
+      })
+      
+   end
+}

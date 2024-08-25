@@ -11,10 +11,10 @@ return {
    config = function()
       local cmp = require("cmp")
 
-      local lua = require("luasnip")
+      local luasnip = require("luasnip")
 
       require("luasnip.loaders.from_vscode").lazy_load()
-      
+
       cmp.setup({
          completion = {
             completeopt = "menu,menuone,preview,noselect",
@@ -25,7 +25,6 @@ return {
             end,
          },
          mapping = cmp.mapping.preset.insert({
-
             ["<C-k>"] = cmp.mapping.select_prev_item(),
             ["<C-j>"] = cmp.mapping.select_next_item(),
             ["<C-b>"] = cmp.mapping.scroll_docs(-4),
@@ -33,13 +32,12 @@ return {
             ["<C-Space>"] = cmp.mapping.complete(),
             ["<C-e>"] = cmp.mapping.abort(),
             ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-
           }),
          sources = cmp.config.sources({
-          --  { name = "nvim_lsp" },
-            { name = "luasnip" },
-            { name = "buffer" },
-            { name = "path" },
+            { name = "nvim_lsp" },  -- lsp recommendation
+            { name = "luasnip" },   -- snippets
+            { name = "buffer" },    -- text inside the buffer
+            { name = "path" },      -- file path
          }),
       })
    end,

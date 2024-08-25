@@ -23,7 +23,9 @@ return {
             "html",
             "cssls",
             "eslint",
-            "pyright"
+            "pyright",
+            "spectral",
+            "lua_ls"
          },
          automatic_installation = true,
       })
