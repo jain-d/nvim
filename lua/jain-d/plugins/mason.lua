@@ -22,7 +22,7 @@ return {
          ensure_installed = {
             "html",
             "cssls",
-            "eslint",
+            "tsserver",
             "pyright",
             "spectral",
             "lua_ls"

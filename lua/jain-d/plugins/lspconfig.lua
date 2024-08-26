@@ -47,7 +47,7 @@ return {
          on_attach = on_attach,
       })
 
-      lspconfig["eslint"].setup({
+      lspconfig["tsserver"].setup({
          capabilities = capabilities,
          on_attach = on_attach,
       })
