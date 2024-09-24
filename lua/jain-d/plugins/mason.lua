@@ -24,6 +24,7 @@ return {
             "cssls",
             "tsserver",
             "pyright",
+            "gopls",
             "spectral",
             "lua_ls"
          },
