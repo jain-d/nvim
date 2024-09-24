@@ -26,6 +26,7 @@ opt.cursorline = true
 opt.termguicolors = true
 opt.background = "dark"
 opt.signcolumn = "yes"
+opt.showmode = false     -- Since lualine already provides that info
 
 --Bidirectional copying
 vim.api.nvim_set_option("clipboard", "unnamedplus");
