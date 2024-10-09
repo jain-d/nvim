@@ -22,7 +22,7 @@ return {
          ensure_installed = {
             "html",
             "cssls",
-            "tsserver",
+            "ts_ls",
             "pyright",
             "gopls",
             "spectral",

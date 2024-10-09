@@ -32,7 +32,7 @@ return {
         }
       },
     })
-    
+
     telescope.load_extension("fzf")
 
     --Set Telescope Keymaps
