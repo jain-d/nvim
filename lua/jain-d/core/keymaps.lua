@@ -1,13 +1,13 @@
 local opt = { noremap = true }
 
-local keymap = vim.keymap 
+local keymap = vim.keymap
 
 -- Leader Keys
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 --General keymaps
-keymap.set("i", "jk", "<ESC>", opt)
+--keymap.set("i", "jk", "<ESC>", opt)
 
 -- Window Pane navigation
 keymap.set("n", "<C-k>", "<C-w>k", opt)
