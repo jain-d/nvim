@@ -30,3 +30,7 @@ opt.showmode = false     -- Since lualine already provides that info
 
 --Bidirectional copying
 vim.api.nvim_set_option("clipboard", "unnamedplus");
+
+-- netrw styling
+vim.g.netrw_banner = 0
+vim.g.netrw_liststyle = 3
