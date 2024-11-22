@@ -34,3 +34,9 @@ keymap.set("n", "<leader>x", ":Rex<CR>", opt)
 
 -- BETTER TERMINAL; Suspends NeoVim and back to Terminal
 keymap.set("n", "<leader>`", ":stop<CR>", opt)
+
+-- Clear highlights on search when pressing <Esc> in normal mode
+keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+
+-- Diagnostic keymaps
+keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
