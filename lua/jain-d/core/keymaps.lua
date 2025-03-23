@@ -29,8 +29,8 @@ keymap.set("v", "<", "<gv", opt)
 keymap.set("v", "<A-j>", ":m .+1<CR>==", opt)
 keymap.set("v", "<A-k>", ":m .-1<CR>==", opt)
 
--- Return to File Explorer Rex
-keymap.set("n", "<leader>x", ":Rex<CR>", opt)
+-- Return to File Explorer Lex
+keymap.set("n", "<C-b>", ":17Lex<CR>", opt)
 
 -- BETTER TERMINAL; Suspends NeoVim and back to Terminal
 keymap.set("n", "<leader>`", ":stop<CR>", opt)
