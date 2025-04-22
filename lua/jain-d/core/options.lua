@@ -5,8 +5,8 @@ opt.number = true
 opt.relativenumber = true
 
 --Tabs and Indentation
-opt.tabstop = 3
-opt.shiftwidth = 3
+opt.tabstop = 4
+opt.shiftwidth = 4
 opt.expandtab = true
 vim.opt.autoindent = true
 vim.opt.smartindent = true
