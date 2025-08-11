@@ -11,7 +11,7 @@ vim.g.maplocalleader = " "
 
 -- Window Pane navigation
 keymap.set("n", "<C-k>", "<C-w>k", opt)
-keymap.set("n", "<C-l>", "<C-w>l", opt)
+keymap.set("n", "<C-S-l>", "<C-w>l", opt)
 keymap.set("n", "<C-j>", "<C-w>j", opt)
 keymap.set("n", "<C-h>", "<C-w>h", opt)
 
@@ -35,8 +35,8 @@ keymap.set("n", "<C-b>", ":17Lex<CR>", opt)
 -- BETTER TERMINAL; Suspends NeoVim and back to Terminal
 keymap.set("n", "<leader>`", ":stop<CR>", opt)
 
--- Clear highlights on search when pressing <Esc> in normal mode
-keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
-
 -- Diagnostic keymaps
 keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+
+-- LSP formating
+keymap.set('n', '<leader>f', function() vim.lsp.buf.format() end)
